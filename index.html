@@ -99,8 +99,8 @@
       <p class="subtitle text-secondary">Reparación profesional de TV LED, Monitores y Equipos Electrónicos.<br>Atendiendo desde 1983 con la máxima confiabilidad.</p>
       
       <div class="hero-cta">
-        <a href="tel:01146503333" class="btn btn-primary">Llamar ahora</a>
-        <a href="#contacto" class="btn btn-secondary">Solicitar diagnóstico</a>
+        <a href="https://wa.me/5491122556308?text=Hola%20quiero%20consultar%20por%20la%20reparacion%20de%20un%20TV" class="btn btn-primary" target="_blank">WhatsApp Directo</a>
+        <a href="#diagnostico" class="btn btn-secondary">Solicitar diagnóstico</a>
       </div>
 
       <div class="hero-visual">
@@ -315,13 +315,70 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Diagnostic Form Section -->
+  <section id="diagnostico" class="section fade-in-section">
+    <div class="container">
+      <div class="apple-card form-card" style="margin: 0 auto; cursor: default;">
+        <h2 class="text-center mb-4">Solicitá tu diagnóstico</h2>
+        <p class="text-center text-secondary mb-8">Completá el formulario y te responderemos para evaluar tu equipo y coordinar la revisión.</p>
+        
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="476f1150-c668-46f3-a399-223f82c099b8">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+          
+          <div class="grid grid-2" style="gap: 20px;">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" name="name" id="name" placeholder="Tu nombre completo" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Teléfono o WhatsApp</label>
+              <input type="tel" name="phone" id="phone" placeholder="Ej: 11 1234 5678" required>
+            </div>
+          </div>
+          
+          <div class="grid grid-2" style="gap: 20px;">
+            <div class="form-group">
+              <label for="device_type">Tipo de equipo</label>
+              <select name="device_type" id="device_type" required>
+                <option value="" disabled selected>Seleccioná un equipo</option>
+                <option value="TV LED">TV LED</option>
+                <option value="Smart TV">Smart TV</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Equipo de audio">Equipo de audio</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="brand">Marca</label>
+              <input type="text" name="brand" id="brand" placeholder="Samsung, LG, Sony, Philips...">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Describe el problema</label>
+            <textarea name="message" id="message" rows="3" placeholder="Contanos brevemente qué le pasa a tu equipo..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-block" id="submit-btn" style="width: 100%; margin-top: 16px;">
+            <span>Solicitar diagnóstico</span>
+          </button>
+          
+          <p class="form-note mt-4 text-center">Te responderemos a la brevedad para coordinar la revisión de tu equipo.</p>
+        </form>
+        
+        <div id="form-message" class="form-message"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact/Location Section -->
   <section id="contacto" class="section section-light fade-in-section">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info-column">
-          <h2 class="mb-4">Solicitá tu diagnóstico</h2>
-          <p class="text-secondary mb-8">Completá el formulario y te responderemos para evaluar tu equipo y coordinar la revisión.<br><br>También podés comunicarte por teléfono o WhatsApp.</p>
+          <h2 class="mb-4">Ubicación y Contacto</h2>
+          <p class="text-secondary mb-8">Estamos en Ramos Mejía atendiendo a toda la zona oeste.<br>También podés comunicarte por teléfono o WhatsApp.</p>
           
           <div class="contact-details">
             <div class="contact-item">
@@ -330,7 +387,7 @@
               </div>
               <div>
                 <strong>Dirección</strong>
-                <p class="small text-secondary">Av. Pres. Perón 1182, Ramos Mejía, Prov. de Buenos Aires</p>
+                <p class="small text-secondary">Av. Pres. Perón 1182<br>Ramos Mejía, Provincia de Buenos Aires</p>
               </div>
             </div>
             
@@ -340,7 +397,7 @@
               </div>
               <div>
                 <strong>Teléfono</strong>
-                <p class="small text-secondary"><a href="tel:01146503333" style="color: inherit;">011 4650-3333</a></p>
+                <p class="small text-secondary"><a href="tel:541146503333" style="color: inherit;">011 4650-3333</a></p>
               </div>
             </div>
 
@@ -366,52 +423,12 @@
           </div>
         </div>
         
-        <div class="contact-form-column">
-          <div class="apple-card form-card">
-            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="476f1150-c668-46f3-a399-223f82c099b8">
-              <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
-              
-              <div class="form-group">
-                <label for="name">Nombre</label>
-                <input type="text" name="name" id="name" placeholder="Tu nombre completo" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="phone">Teléfono o WhatsApp</label>
-                <input type="tel" name="phone" id="phone" placeholder="Ej: 11 1234 5678" required>
-              </div>
-              
-              <div class="form-group">
-                <label for="device_type">Tipo de equipo</label>
-                <select name="device_type" id="device_type" required>
-                  <option value="" disabled selected>Seleccioná un equipo</option>
-                  <option value="TV LED">TV LED</option>
-                  <option value="Smart TV">Smart TV</option>
-                  <option value="Monitor">Monitor</option>
-                  <option value="Equipo de audio">Equipo de audio</option>
-                  <option value="Otro">Otro</option>
-                </select>
-              </div>
-              
-              <div class="form-group">
-                <label for="brand">Marca</label>
-                <input type="text" name="brand" id="brand" placeholder="Samsung, LG, Sony, Philips...">
-              </div>
-              
-              <div class="form-group">
-                <label for="message">Describe el problema</label>
-                <textarea name="message" id="message" rows="3" placeholder="Contanos brevemente qué le pasa a tu equipo..."></textarea>
-              </div>
-              
-              <button type="submit" class="btn btn-primary btn-block" id="submit-btn" style="width: 100%; margin-top: 16px;">
-                <span>Solicitar diagnóstico</span>
-              </button>
-              
-              <p class="form-note mt-4 text-center">Te responderemos a la brevedad para coordinar la revisión de tu equipo.</p>
-            </form>
-            
-            <div id="form-message" class="form-message"></div>
+        <div class="map-column">
+          <div class="map-placeholder">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.846503042686!2d-58.558356224329094!3d-34.63331597294326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7dfed0fce4b%3A0xe7edebaa3fa7eb4c!2sAv.%20Pres.%20Juan%20Domingo%20Per%C3%B3n%201182%2C%20B1707%20Villa%20Sarmiento%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1708891503889!5m2!1sen!2sar" 
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
       </div>
