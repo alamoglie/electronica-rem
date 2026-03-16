@@ -10,6 +10,8 @@
     gtag('js', new Date());
     gtag('config', 'G-3PWMVGX1B8');
   </script>
+  <!-- hCaptcha (required by Web3Forms) -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Servicio técnico especializado en reparación de televisores y Smart TV Samsung en Ramos Mejía y Zona Oeste. Diagnóstico profesional y atención rápida.">
   <title>Reparación de TV Samsung | Service Técnico Especializado</title>
@@ -392,6 +394,8 @@
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="476f1150-c668-46f3-a399-223f82c099b8">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+          <!-- hCaptcha widget (required by Web3Forms) -->
+          <div class="h-captcha" data-captcha="true"></div>
           
           <div class="grid grid-2" style="gap: 20px;">
             <div class="form-group">
@@ -611,6 +615,18 @@
 
         const formData = new FormData(contactForm);
         const object = Object.fromEntries(formData);
+
+        // Check for hCaptcha token
+        if (!object["h-captcha-response"]) {
+          formMessage.innerHTML = 'Por favor, completá el captcha para continuar.';
+          formMessage.className = 'form-message error';
+          formMessage.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+          submitBtn.innerHTML = '<span>Solicitar diagnóstico</span>';
+          return;
+        }
+
         const json = JSON.stringify(object);
 
         fetch('https://api.web3forms.com/submit', {
@@ -625,6 +641,7 @@
           let result = await response.json();
           if (response.status == 200) {
             contactForm.reset();
+            if (typeof hcaptcha !== 'undefined') hcaptcha.reset(); // Reset hCaptcha
             formMessage.innerHTML = 'Gracias, recibimos tu consulta. Te contactaremos a la brevedad.';
             formMessage.className = 'form-message success';
             formMessage.style.display = 'block';
@@ -636,8 +653,8 @@
               'page_location': window.location.href
             });
           } else {
-            console.log(response);
-            formMessage.innerHTML = 'Ocurrió un error. Por favor, intentá de nuevo o contactanos por teléfono.';
+            console.log(result);
+            formMessage.innerHTML = result.message || 'Ocurrió un error. Por favor, intentá de nuevo o contactanos por teléfono.';
             formMessage.className = 'form-message error';
             formMessage.style.display = 'block';
           }
