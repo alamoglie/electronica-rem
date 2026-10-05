@@ -21,7 +21,7 @@ from contenido import PAGES, EXISTING, MENU, RELATED_EXISTING  # noqa: E402
 from casos import CASOS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = "https://electronica-rem.com"
+SITE = "https://www.electronica-rem.com"
 WA_NUMBER = "5491122556308"
 TEMPLATE = ROOT / "reparacion-tv-no-enciende.html"
 TEMPLATE_WA = "https://wa.me/5491122556308?text=Hola%2C%20mi%20TV%20no%20enciende.%20Quiero%20consultar%20por%20la%20reparaci%C3%B3n"

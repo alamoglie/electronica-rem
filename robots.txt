@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://electronica-rem.com/sitemap.xml
+Sitemap: https://www.electronica-rem.com/sitemap.xml
