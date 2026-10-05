@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/assets/hero_devices.png", "destination": "/assets/hero_devices.webp", "permanent": true },
+    { "source": "/assets/shop_interior.png", "destination": "/assets/shop_interior.webp", "permanent": true },
+    { "source": "/assets/technician_working.png", "destination": "/assets/technician_working.webp", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
